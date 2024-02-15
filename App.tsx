@@ -1,10 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import Value from "./src/components/value";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <View style={styles.values}>
+        <Value label="Steps" value="1234" />
+        <Value label="Distance" value="2 km" />
+        <Value label="Flights Climbed" value="2" />
+      </View>
       <StatusBar style="auto" />
     </View>
   );
@@ -13,8 +18,13 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#000",
+    justifyContent: "center",
+    padding: 12
+  },
+  values: {
+    flexDirection: "row",
+    gap: 25,
+    flexWrap: "wrap",
   },
 });
